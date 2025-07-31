@@ -1,6 +1,6 @@
 # 📦 Projeto de API em Go - Produtos
 
-Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar produtos. Ele permite criar, listar, atualizar e deletar produtos de um banco de dados MySQL.
+Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar produtos. Ele permite criar, listar, atualizar e deletar produtos de um banco de dados PostgreSQL.
 
 ## 🚀 Tecnologias utilizadas
 
