@@ -5,7 +5,7 @@ Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar p
 ## 🚀 Tecnologias utilizadas
 
 - [Go](https://golang.org/)
-- [MySQL](https://www.mysql.com/)
+- [PostgreSQL](https://www.mysql.com/)
 - [Docker](https://www.docker.com/) (opcional)
 - `net/http` para criação das rotas
 - `database/sql` para conexão com o banco
