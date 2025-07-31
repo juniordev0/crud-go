@@ -14,12 +14,19 @@ Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar p
 ## 📁 Estrutura de Pastas
 
 ├── controllers/ # Lógica dos endpoints
+
 ├── db/ # Conexão com banco de dados
+
 ├── models/ # Definição de structs e interfaces
+
 ├── routes/ # Rotas da API
+
 ├── utils/ # Funções auxiliares e formatadores
+
 ├── posgreSQL/ # contem a ddl da tabela produtos.
+
 ├── main.go # Ponto de entrada da aplicação
+
 └── go.mod / go.sum # Gerenciamento de dependências
 
 
