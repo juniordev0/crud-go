@@ -23,7 +23,7 @@ Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar p
 
 ├── utils/ # Funções auxiliares e formatadores
 
-├── posgreSQL/ # contem a ddl da tabela produtos.
+├── postgreSQL/ # contem a ddl da tabela produtos.
 
 ├── main.go # Ponto de entrada da aplicação
 
