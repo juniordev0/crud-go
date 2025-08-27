@@ -1,11 +1,11 @@
 # 📦 Projeto de API em Go - Produtos
 
-Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar produtos. Ele permite criar, listar, atualizar e deletar produtos de um banco de dados MySQL.
+Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar produtos em um banco de dados PostgreSQL. Ele permite criar, listar, atualizar e deletar produtos.
 
 ## 🚀 Tecnologias utilizadas
 
 - [Go](https://golang.org/)
-- [MySQL](https://www.mysql.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 - [Docker](https://www.docker.com/) (opcional)
 - `net/http` para criação das rotas
 - `database/sql` para conexão com o banco
@@ -14,21 +14,20 @@ Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar p
 ## 📁 Estrutura de Pastas
 
 ├── controllers/ # Lógica dos endpoints
-├── db/ # Conexão com banco de dados
-├── models/ # Definição de structs e interfaces
-├── routes/ # Rotas da API
-├── utils/ # Funções auxiliares e formatadores
-├── posgreSQL/ # contem a ddl da tabela produtos.
-├── main.go # Ponto de entrada da aplicação
+├── db/          # Conexão com banco de dados
+├── models/      # Definição de structs e interfaces
+├── routes/      # Rotas da API
+├── utils/       # Funções auxiliares e formatadores
+├── postgreSQL/  # Contém a DDL da tabela produtos
+├── main.go      # Ponto de entrada da aplicação
 └── go.mod / go.sum # Gerenciamento de dependências
-
 
 ## 🔧 Instalação e Execução
 
 ### Pré-requisitos
 
 - Go instalado (versão 1.18 ou superior)
-- MySQL rodando
+- PostgreSQL rodando
 - (Opcional) Docker e Docker Compose
 
 ### 1. Clone o repositório
@@ -36,39 +35,41 @@ Este projeto é uma API RESTful desenvolvida em **Go (Golang)** para gerenciar p
 ```bash
 git clone https://github.com/seu-usuario/nome-do-repo.git
 cd nome-do-repo
+```
 
 ### 2. Crie o banco de dados
-- CREATE DATABASE postgres;
-- na pasta postgreSQL possui a ddl para criação da tabela.
+- `CREATE DATABASE postgres;`
+- Na pasta `postgreSQL` existe a DDL para criação da tabela.
 
 ### 3. Configure a conexão com o banco
-- No arquivo db/connection.go, configure os dados de conexão com o banco:
-- usuario := "root"
-- senha := "sua_senha"
-- host := "localhost"
-- porta := "3306"
-- dbname := "produtos_db"
+- No arquivo `db/connection.go`, configure os dados de conexão com o banco:
+  - `usuario := "postgres"`
+  - `senha := "sua_senha"`
+  - `host := "localhost"`
+  - `porta := "5432"`
+  - `dbname := "produtos_db"`
 
 ### 4. Instale as dependências
-- go mod tidy
+- `go mod tidy`
 
 ### 5. Execute o servidor
-- go run main.go
+- `go run main.go`
 
 A API ficará disponível em:
 📍 http://localhost:8080
 
-🛠️ Endpoints disponíveis
-Método	Endpoint	Descrição
-GET	/produtos	Lista todos os produtos
-POST	/produtos	Cria um novo produto
-PUT	/produtos/{id}	Atualiza um produto
-DELETE	/produtos/{id}	Deleta um produto
+### 🛠️ Endpoints disponíveis
 
-📌 Observações
-Campos de data são formatados para exibir apenas data (dd/mm/yyyy).
+| Método | Endpoint       | Descrição               |
+| ------ | -------------- | ----------------------- |
+| GET    | /produtos      | Lista todos os produtos |
+| POST   | /produtos      | Cria um novo produto    |
+| PUT    | /produtos/{id} | Atualiza um produto     |
+| DELETE | /produtos/{id} | Deleta um produto       |
 
-O código segue princípios de separação de responsabilidades.
+📌 **Observações**
+- Campos de data podem ser enviados como `YYYY-MM-DD` ou `MM-DD-YYYY` e são retornados como `YYYY-MM-DD`.
+- O código segue princípios de separação de responsabilidades.
 
 📄 Licença
 Este projeto está licenciado sob a MIT License.
